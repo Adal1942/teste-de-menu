@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(34, 34, 34);
+    color: #fff;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover{
+    opacity: 0.7;
+}
+.logo img{
+    width: 130px;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(90deg, #2980B9, #6DD5FA, #2980B9);
+    height: 8vh;
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+.nav-list li{
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+/*Navbar*/
+.mobile-menu{
+    display: none;
+    cursor: pointer;
+}
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+@media (max-width: 999px){
+    body {
+        position: relative;
+        overflow-x: hidden;
+      }
+    .nav-list{
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 70vw;
+        height: 50vh;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        z-index: 100;
+    }
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu{
+        display: block;
+    }
+}
+.nav-list.active{
+    transform: translateX(0);
+}
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.mobile-menu.active .line1{
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+.mobile-menu.active .line2{
+    opacity: 0;
+}
+.mobile-menu.active .line3{
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+/* Começo do cartão */
+.teste{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.cartao{
+    position: relative;
+    width: 1200px;
+    height: 600px;
+    margin-top: 50px;
+    background: #fff;
+    color: #000;
+    box-shadow: 0 15px 45px 15px rgba(0,0,0,0.1);
+    display: flex;    
+}
+.cartao .thumb{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.cartao .thumb .lista{
+    width: 70px;
+    height: 70px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+}
+.cartao .thumb .lista img{
+    width: 70%;
+    border-radius: 10px;
+}
+.cartao .imgBx{
+    position: relative;
+    min-width: 480px;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.cartao .imgBx img{
+    max-width: 450px;
+    padding-left: 25px;
+}
+.cartao .detalhes{
+    position: relative;
+    width: 720px;
+    height: 100%;
+    background: #fff;
+    padding: 20px 35px 0px 20px;
+}
+.titulo{
+    width: 401px;
+    height: 32px;
+}
+.titulo h2{
+    font-size: 30px;
+}
+
+.sub-titulo h3{
+    font-size: 20px;
+}
+.avaliacoes{
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+}
+.estrelas{
+    padding: 0px 5px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #7303c0;
+}
+.avaliacao{
+    padding: 0px 15px;
+    font-size: 16px;
+    font-weight: 300;
+}
+.vendidos{
+    padding: 0px 15px;
+    font-size: 16px;
+    font-weight: 300;
+}
+.preco{
+    padding: 15px 20px;
+    font-size: 35px;
+    color: red;
+    font-weight: 600;
+    background: #fafafa;
+    box-shadow: 0 15px 45px 15px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+.contador{
+    position: relative;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+}
+.quantidade{
+    padding: 0px 5px; 
+}
+.container{
+    position: relative;
+    width: 70px;
+    height: 31.5px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+.container .adicao{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10.5px;
+    display: block;
+    font-size: 1.05em;
+    cursor: pointer;
+    z-index: 100;
+}
+.container .subtracao{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10.5px;
+    display: block;
+    font-size: 1.05em;
+    cursor: pointer;
+    z-index: 100;
+}
+#box span{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.12em;
+    font-weight: 700;
+    display: none;
+}
+#box span:nth-child(1){
+    display: initial;
+}
+.disponivel{
+    padding: 0px 15px;
+    font-size: 11px;
+}
+.comprar{
+    padding: 0px 5px;
+    margin-top: 30px;
+    background: #25d366;
+    width: 380px;
+    height: 80px;
+    display: flex;
+    border-radius: 20px;
+    justify-content:center;
+    align-items: center;
+}
+.comprei{
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+}
+.carro{
+    padding: 0px 5px;
+    margin-top: 30px;
+    background: #1c92d2;
+    width: 380px;
+    height: 80px;
+    display: flex;
+    border-radius: 20px;
+    justify-content:center;
+    align-items: center;
+}
+.carrinho{
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+}
+/* Card 2*/
+.teste-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.cartao-2{
+    width: 1200px;
+    height: 300px;
+    background: #fff;
+    color: #000;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 45px 15px rgba(0,0,0,0.2);
+    padding: 30px 45px 0px 30px;   
+}
+.descricao h3{
+    font-size: 30px;
+    font-weight: 300;
+}
+.medidas h3{
+    margin-left: 1px;
+    font-size: 20px;
+    font-weight: 300;
+}
+.construcao h3{
+    margin-left: 1px;
+    font-size: 20px;
+    font-weight: 300;
+}
+.construcao-2 h3{
+    margin-left: 1px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/* Carousel */
+.carrosel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.carrosel-2{
+    width: 1200px;
+    height: 400px;
+    background: #fff;
+    color: #000;
+    margin-bottom: 50px;
+    box-shadow: 0 15px 45px 15px rgba(0,0,0,0.2);
+    padding: 30px 45px 0px 30px;   
+}
+.box-categoria{
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+.ideias h3{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    background: #fff;
+    padding: 2px;
+}
+/* começo do footer */
+.pe-grande{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    height: 100px;
+}
+ul .novo{
+    list-style: none;
+    margin: 0px 5px 10px 5px;
+    padding-left: 85px;
+    font-size: 35px;
+}
+
+
